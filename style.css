@@ -1,0 +1,370 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Epilogue', sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  min-height: 100vh;
+  padding: 16px 16px 94px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  height: 35px;
+}
+
+.logo {
+  align-self: flex-end;
+}
+
+.hamburger {
+  align-self: center;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  z-index: 99;
+}
+
+.hamburger .close {
+  display: none;
+}
+
+.hamburger.active .open {
+  display: none;
+}
+
+.hamburger.active .close {
+  display: initial;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 78px 21px 0px 24px;
+  width: 240px;
+  height: 100vh;
+  color: #686868;
+  background-color: hsl(0, 0%, 100%);
+  transform: translateX(100%);
+  transition: linear 0.2s;
+  z-index: 8;
+}
+
+nav.active {
+  transform: translateX(0);
+  transition: ease-out 0.25s;
+}
+
+ul {
+  list-style-type: none;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.site-map {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.features a,
+.company a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.features-dropdown,
+.company-dropdown {
+  display: none;
+  margin-top: 24px;
+  margin-left: 24px;
+}
+
+.features-dropdown.expanded,
+.company-dropdown.expanded {
+  display: block;
+}
+
+.features:has(.expanded) > a img{
+  transform: scaleY(-1);
+}
+
+.company:has(.expanded) > a img {
+  transform: scaleY(-1);
+}
+
+.features-dropdown li,
+.company-dropdown li {
+  margin-bottom: 16px;
+}
+
+.features-dropdown li a {
+  display: flex;
+}
+
+.features-dropdown li img {
+  width: auto;
+  height: 20px;
+  margin-right: 14px;
+}
+
+a {
+  color: #686868;
+  text-decoration: none;
+}
+
+.sign-in {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.sign-in a {
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 16px;
+}
+
+.sign-in button {
+  padding: 13px 0;
+  width: 100%;
+  color: #686868;
+  background: transparent;
+  border: 1.5px solid hsl(0, 0%, 41%);
+  border-radius: 14px;
+}
+
+picture img {
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  margin-bottom: 47.75px;
+  max-width: 100vw;
+}
+
+article {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+article h1 {
+  margin-bottom: 16px;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 42px;
+  letter-spacing: -0.5px;
+  color: hsl(0, 0%, 8%);
+}
+
+article p {
+  margin-bottom: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  color: hsl(0, 0%, 41%);
+}
+
+article button {
+  padding: 12px 20px 10px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: -0.222222px;
+  color: hsl(0, 0%, 98%);
+  background-color:hsl(0, 0%, 8%);
+  border: none;
+  border-radius: 15px;
+}
+
+.clients {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clients img {
+  min-width: 0;
+}
+
+.clients img:nth-child(1) {
+  margin-right: 28.75px;
+}
+
+.clients img:nth-child(2) {
+  margin-right: 28.6px;
+}
+
+.clients img:nth-child(3) {
+  margin-right: 28.5px;
+}
+
+@media (min-width: 1280px) {
+  body {
+    padding: 21px 40px;
+  }
+
+  header {
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 68.35px;
+    height: auto;
+  }
+
+  .logo {
+    align-self: center;
+    margin-top: 5px;
+    margin-right: 60px;
+  }
+
+  ul {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  a:hover {
+    cursor: pointer;
+    color: #151515;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    position: static;
+    transform: none;
+    width: 100%;
+    height: inherit;
+    padding: 0;
+  }
+
+  .site-map {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 0;
+    height: inherit;
+  }
+
+  .features-dropdown,
+  .company-dropdown {
+    position: absolute;
+    padding: 24px 24px 8px 24px;
+    margin: 0;
+    background: hsl(0, 0%, 100%);
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.149126);
+    border-radius: 10px;
+  }
+
+  .features-dropdown {
+    top: 70px;
+    left: 113px;
+  }
+
+  .features-dropdown li img {
+    width: auto;
+    height: 16px;
+    margin-right: 15px;
+  }
+
+  .company-dropdown {
+    top: 70px;
+    left: 306px;
+  }
+
+  .features a,
+  .company a {
+    gap: 8px;
+  }
+
+  .sign-in {
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    height: inherit;
+  }
+
+  .sign-in a {
+    margin-bottom: 0;
+  }
+
+  .sign-in button {
+    padding: 13px 22px 13px 23px;
+    margin-left: 40px;
+  }
+
+  .sign-in button:hover {
+    color: #151515;
+    border: 1.5px solid #151515;
+    cursor: pointer;
+  }
+
+  main {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    margin-left: 125px;
+  }
+
+  picture img {
+    position: static;
+    left: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    max-width: 480px;
+  }
+
+  article {
+    width: 540px;
+    margin: 104px 125px 108px 0;
+    text-align: left;
+  }
+
+  article h1 {
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 80px;
+    letter-spacing: -1.11111px;
+    margin-bottom: 48px;
+    max-width: 520px;
+  }
+
+  article p {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 51px;
+    max-width: 445px;
+  }
+
+  article button {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.25px;
+    padding: 15px 28px 13px 31px;
+  }
+
+  article button:hover {
+    cursor: pointer;
+    color: #151515;
+    background: transparent;
+    border: 1px solid #151515;
+  }
+
+  .clients {
+    max-width: 477.63px;
+  }
+}
